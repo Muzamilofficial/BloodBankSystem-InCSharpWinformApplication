@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="DB_BloodBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TblBlood">
+          <Key>
+            <PropertyRef Name="BGroup" />
+          </Key>
+          <Property Name="BGroup" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="BStock" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblDonor">
+          <Key>
+            <PropertyRef Name="DNum" />
+          </Key>
+          <Property Name="DNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DAge" Type="int" Nullable="false" />
+          <Property Name="DGender" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DPhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DAddress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DBGroup" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBLEmployee">
+          <Key>
+            <PropertyRef Name="ENum" />
+          </Key>
+          <Property Name="ENum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EPass" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblPatient">
+          <Key>
+            <PropertyRef Name="PNum" />
+          </Key>
+          <Property Name="PNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PAge" Type="int" Nullable="false" />
+          <Property Name="PGender" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="PPhone" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PAddress" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PBGroup" Type="varchar" MaxLength="5" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBLTransfer">
+          <Key>
+            <PropertyRef Name="TNum" />
+          </Key>
+          <Property Name="TNum" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PName" Type="varchar" MaxLength="50" />
+          <Property Name="BGroup" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DB_BloodBankModelStoreContainer">
+          <EntitySet Name="TblBlood" EntityType="Self.TblBlood" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblDonor" EntityType="Self.TblDonor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLEmployee" EntityType="Self.TBLEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblPatient" EntityType="Self.TblPatient" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLTransfer" EntityType="Self.TBLTransfer" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_BloodBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TblBlood">
+          <Key>
+            <PropertyRef Name="BGroup" />
+          </Key>
+          <Property Name="BGroup" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BStock" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblDonor">
+          <Key>
+            <PropertyRef Name="DNum" />
+          </Key>
+          <Property Name="DNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DAge" Type="Int32" Nullable="false" />
+          <Property Name="DGender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DBGroup" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBLEmployee">
+          <Key>
+            <PropertyRef Name="ENum" />
+          </Key>
+          <Property Name="ENum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EPass" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TblPatient">
+          <Key>
+            <PropertyRef Name="PNum" />
+          </Key>
+          <Property Name="PNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PAge" Type="Int32" Nullable="false" />
+          <Property Name="PGender" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PBGroup" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBLTransfer">
+          <Key>
+            <PropertyRef Name="TNum" />
+          </Key>
+          <Property Name="TNum" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="DB_BloodBankEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TblBloods" EntityType="Self.TblBlood" />
+          <EntitySet Name="TblDonors" EntityType="Self.TblDonor" />
+          <EntitySet Name="TBLEmployees" EntityType="Self.TBLEmployee" />
+          <EntitySet Name="TblPatients" EntityType="Self.TblPatient" />
+          <EntitySet Name="TBLTransfers" EntityType="Self.TBLTransfer" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_BloodBankModelStoreContainer" CdmEntityContainer="DB_BloodBankEntities">
+          <EntitySetMapping Name="TblBloods">
+            <EntityTypeMapping TypeName="DB_BloodBankModel.TblBlood">
+              <MappingFragment StoreEntitySet="TblBlood">
+                <ScalarProperty Name="BGroup" ColumnName="BGroup" />
+                <ScalarProperty Name="BStock" ColumnName="BStock" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDonors">
+            <EntityTypeMapping TypeName="DB_BloodBankModel.TblDonor">
+              <MappingFragment StoreEntitySet="TblDonor">
+                <ScalarProperty Name="DNum" ColumnName="DNum" />
+                <ScalarProperty Name="DName" ColumnName="DName" />
+                <ScalarProperty Name="DAge" ColumnName="DAge" />
+                <ScalarProperty Name="DGender" ColumnName="DGender" />
+                <ScalarProperty Name="DPhone" ColumnName="DPhone" />
+                <ScalarProperty Name="DAddress" ColumnName="DAddress" />
+                <ScalarProperty Name="DBGroup" ColumnName="DBGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLEmployees">
+            <EntityTypeMapping TypeName="DB_BloodBankModel.TBLEmployee">
+              <MappingFragment StoreEntitySet="TBLEmployee">
+                <ScalarProperty Name="ENum" ColumnName="ENum" />
+                <ScalarProperty Name="EID" ColumnName="EID" />
+                <ScalarProperty Name="EPass" ColumnName="EPass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblPatients">
+            <EntityTypeMapping TypeName="DB_BloodBankModel.TblPatient">
+              <MappingFragment StoreEntitySet="TblPatient">
+                <ScalarProperty Name="PNum" ColumnName="PNum" />
+                <ScalarProperty Name="PName" ColumnName="PName" />
+                <ScalarProperty Name="PAge" ColumnName="PAge" />
+                <ScalarProperty Name="PGender" ColumnName="PGender" />
+                <ScalarProperty Name="PPhone" ColumnName="PPhone" />
+                <ScalarProperty Name="PAddress" ColumnName="PAddress" />
+                <ScalarProperty Name="PBGroup" ColumnName="PBGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLTransfers">
+            <EntityTypeMapping TypeName="DB_BloodBankModel.TBLTransfer">
+              <MappingFragment StoreEntitySet="TBLTransfer">
+                <ScalarProperty Name="TNum" ColumnName="TNum" />
+                <ScalarProperty Name="PName" ColumnName="PName" />
+                <ScalarProperty Name="BGroup" ColumnName="BGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

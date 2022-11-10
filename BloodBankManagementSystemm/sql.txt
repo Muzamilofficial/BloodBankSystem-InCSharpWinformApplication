@@ -1,0 +1,37 @@
+create table TblDonor
+(
+	DNum int not null primary key identity(100, 1),
+	DName varchar(50) not null,
+	DAge int not null,
+	DGender varchar(10) not null,
+	DPhone varchar(50) not null,
+	DAddress varchar(50) not null,
+	DBGroup varchar(5) not null
+)
+create table TblPatient
+(
+	PNum int not null primary key identity(500, 1),
+	PName varchar(50) not null,
+	[PAge] int not null,
+	PGender varchar(10) not null,
+	PPhone varchar(50) not null,
+	PAddress varchar(50) not null,
+	PBGroup varchar(5) not null
+)
+create table TblBlood
+(
+	BGroup varchar(5) not null primary key,
+	BStock int not null
+)
+create table TBLTransfer
+(
+	TNum int not null primary key identity(1,1),
+	PName varchar(50),
+	BGroup varchar(50)
+)
+create table TBLEmployee
+(
+	ENum int not null primary key identity(1,1),
+	EID varchar(50) not null,
+	EPass varchar(50) not null
+)
